@@ -6,6 +6,6 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{}],"kz9M":[function(require,module,exports) {
 
 },{}],"TfQ5":[function(require,module,exports) {
-"use strict";var e=require("./gallery-items"),l=t(require("../../node_modules/simplelightbox"));function t(e){return e&&e.__esModule?e:{default:e}}require("../../node_modules/simplelightbox/dist/simple-lightbox.min.css"),console.log(e.galleryItems);const i=document.querySelector(".gallery");function r(e){const l=e.map(e=>{let{preview:l,original:t,description:i}=e;return`<li><a class="gallery__item" href="${t}">\n  <img class="gallery__image" src="${l}" alt="${i}" />\n</a></li>\n  `}).join("");i.insertAdjacentHTML("afterbegin",l)}r(e.galleryItems);const a=new l.default(".gallery a",{captionsData:"alt",captionDelay:250});
+"use strict";var e=require("./gallery-items"),l=t(require("../../node_modules/simplelightbox"));function t(e){return e&&e.__esModule?e:{default:e}}require("../../node_modules/simplelightbox/dist/simple-lightbox.min.css");const i=document.querySelector(".gallery");function r(e){const l=e.map(e=>{let{preview:l,original:t,description:i}=e;return`<a class="gallery__item" href="${t}">\n  <img class="gallery__image" src="${l}" alt="${i}" />\n</a>\n  `}).join("");i.insertAdjacentHTML("afterbegin",l)}r(e.galleryItems);const a=new l.default(".gallery a",{captionsData:"alt",captionDelay:250});
 },{"./gallery-items":"q5Rn","../../node_modules/simplelightbox":"yx6k","../../node_modules/simplelightbox/dist/simple-lightbox.min.css":"kz9M"}]},{},["TfQ5"], null)
-//# sourceMappingURL=/goit-js-hw-08/01-gallery.e2d0862a.js.map
+//# sourceMappingURL=/goit-js-hw-08/01-gallery.54c9ca59.js.map
