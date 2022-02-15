@@ -4,8 +4,6 @@ import { galleryItems } from './gallery-items';
 
 console.log(galleryItems);
 
-import SimpleLightbox from "../../node_modules/simplelightbox";
-
 // Описан в документации
 import SimpleLightbox from "../../node_modules/simplelightbox";
 // Дополнительный импорт стилей
