@@ -1,4 +1,4 @@
-// import throttle from "../../node_modules/lodash.throttle";
+var throttle = require('lodash.throttle');
 
 const iframe = document.querySelector('iframe');
     const player = new Vimeo.Player(iframe);
@@ -33,7 +33,7 @@ const iframe = document.querySelector('iframe');
 //     console.log("Scroll handler call every 300ms");
 //   }, 300)
 // );
-player.on( 'timeupdate', _.throttle(data => { localStorage.setItem("videoplayer-current-time", data.seconds.toString());}, 1000),);
+player.on( 'timeupdate', throttle(data => { localStorage.setItem("videoplayer-current-time", data.seconds.toString());}, 1000),);
 
 player.setCurrentTime(localStorage.getItem("videoplayer-current-time")).then(function(seconds) {
     // seconds = the actual time that the player seeked to
