@@ -8,11 +8,11 @@ emailEl.value = localStorage.getItem("feedback-form-state-email")
 messageEl.textContent = localStorage.getItem("feedback-form-state-message")
 
 messageEl.addEventListener("input", (event) => {
-  _.throttle(localStorage.setItem("feedback-form-state-message", event.currentTarget.value), 500);
+  _.throttle(localStorage.setItem("feedback-form-state-message", event.currentTarget.value.toString()), 500);
  });
 
 emailEl.addEventListener("input", (event) => {
-  _.throttle(localStorage.setItem("feedback-form-state-email", event.currentTarget.value), 500);
+  _.throttle(localStorage.setItem("feedback-form-state-email", event.currentTarget.value.toString()), 500);
 });
 
 const handleClick = (event) => {
