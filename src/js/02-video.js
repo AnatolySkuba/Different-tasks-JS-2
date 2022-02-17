@@ -12,7 +12,7 @@ const iframe = document.querySelector('iframe');
 // player.on( 'timeupdate', function(data) { localStorage.setItem("videoplayer-current-time", data.seconds.toString());
 // });
 
-player.on( 'timeupdate', _.throttle(data => { localStorage.setItem("videoplayer-current-time", data.seconds.toString());}, 1000),);
+player.on( 'timeupdate', throttle(data => { localStorage.setItem("videoplayer-current-time", data.seconds.toString());}, 1000),);
 
 player.setCurrentTime(localStorage.getItem("videoplayer-current-time")).then(function(seconds) {
     // seconds = the actual time that the player seeked to
