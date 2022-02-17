@@ -1,4 +1,9 @@
 // const throttle = require('lodash.throttle');
+var _ = require('lodash');
+// Load the core build.
+var _ = require('lodash/core');
+// Load the FP build for immutable auto-curried iteratee-first data-last methods.
+var fp = require('lodash/fp');
 
 const iframe = document.querySelector('iframe');
     const player = new Vimeo.Player(iframe);
