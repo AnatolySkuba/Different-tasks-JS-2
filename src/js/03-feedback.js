@@ -16,8 +16,7 @@ emailEl.addEventListener("input", (event) => {
 });
 
 const handleClick = (event) => {
-  console.log("Email: ", localStorage.getItem("feedback-form-state-email"));
-  console.log("Message: ", localStorage.getItem("feedback-form-state-message"));
+  console.log({ email: localStorage.getItem("feedback-form-state-email"), message: localStorage.getItem("feedback-form-state-message")});
   localStorage.removeItem("feedback-form-state-email");
   localStorage.removeItem("feedback-form-state-message");
   emailEl.value = '';
