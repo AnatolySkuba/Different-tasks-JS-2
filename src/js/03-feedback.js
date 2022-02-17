@@ -20,7 +20,8 @@ const handleClick = (event) => {
   console.log("Message: ", localStorage.getItem("feedback-form-state-message"));
   localStorage.removeItem("feedback-form-state-email");
   localStorage.removeItem("feedback-form-state-message");
-
+  emailEl.value = '';
+  messageEl.textContent = '';
 };
 
 buttonEl.addEventListener("click", handleClick);
