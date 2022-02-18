@@ -5,8 +5,8 @@ const messageEl = document.querySelector('textarea');
 const buttonEl = document.querySelector('button');
 const formEl = document.querySelector('form');
 
-const newEmail = JSON.parse(localStorage.getItem('feedback-form-state'));
-const newMessage = JSON.parse(localStorage.getItem('feedback-form-state'));
+let newEmail = JSON.parse(localStorage.getItem('feedback-form-state'));
+let newMessage = JSON.parse(localStorage.getItem('feedback-form-state'));
 
 if (newEmail) {
   emailEl.value = newEmail.email;
@@ -31,8 +31,8 @@ formEl.addEventListener("input", throttle(() => {
   localStorage.setItem("feedback-form-state", JSON.stringify({email, message}))
 }, 500));
 
-const handleClick = (event) => {
-  console.log({ email: localStorage.getItem("feedback-form-state-email"), message: localStorage.getItem("feedback-form-state-message")});
+const handleClick = () => {
+  console.log(localStorage.getItem("feedback-form-state"));
   localStorage.removeItem("feedback-form-state");
   emailEl.value = '';
   messageEl.textContent = '';
