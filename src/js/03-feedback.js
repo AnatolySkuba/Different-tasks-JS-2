@@ -31,11 +31,12 @@ formEl.addEventListener("input", throttle(() => {
   localStorage.setItem("feedback-form-state", JSON.stringify({email, message}))
 }, 500));
 
-const handleClick = () => {
+const handleClick = (event) => {
+  event.preventDefault();
   console.log(localStorage.getItem("feedback-form-state"));
   localStorage.removeItem("feedback-form-state");
   emailEl.value = '';
-  messageEl.textContent = '';
+  messageEl.value = '';
 };
 
 buttonEl.addEventListener("click", handleClick);
