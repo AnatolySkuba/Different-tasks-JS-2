@@ -13,28 +13,29 @@ if (newEmail) {
   messageEl.textContent = newMessage.message;
 }
 
-let message = '';
-let email = '';
+const formInput = {};
 
 let changeMessage = (event) => {
-  message = event.currentTarget.value.toString();
+  formInput.message = event.currentTarget.value;
 };
 
 let changeEmail = (event) => {
-  email = event.currentTarget.value.toString();
+  formInput.email = event.currentTarget.value;
 };
 
 messageEl.addEventListener("input", changeMessage);
 emailEl.addEventListener("input", changeEmail);
 
 formEl.addEventListener("input", throttle(() => {
-  localStorage.setItem("feedback-form-state", JSON.stringify({email, message}))
+  localStorage.setItem("feedback-form-state", JSON.stringify(formInput))
 }, 500));
 
 const handleClick = (event) => {
   event.preventDefault();
   console.log(localStorage.getItem("feedback-form-state"));
   localStorage.removeItem("feedback-form-state");
+  formInput.message = '';
+  formInput.email = '';
   emailEl.value = '';
   messageEl.value = '';
 };
