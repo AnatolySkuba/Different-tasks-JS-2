@@ -8,21 +8,14 @@ const iframe = document.querySelector('iframe');
     });
 
     player.getVideoTitle().then(function(title) {
-        // console.log('title:', title);
     });
 
-player.on( 'timeupdate', _.throttle(data => { localStorage.setItem("videoplayer-current-time", data.seconds.toString());}, 1000),);
+player.on( 'timeupdate', _.throttle(data => { 
+    localStorage.setItem("videoplayer-current-time", data.seconds.toString());
+}, 1000),);
 
-player.setCurrentTime(localStorage.getItem("videoplayer-current-time")).then(function(seconds) {
-    // seconds = the actual time that the player seeked to
-}).catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':
-            // the time was less than 0 or greater than the video’s duration
-            break;
+const saveTime = localStorage.getItem("videoplayer-current-time");
 
-        default:
-            // some other error occurred
-            break;
-    }
-});
+if (saveTime) {
+    player.setCurrentTime(saveTime);
+};
