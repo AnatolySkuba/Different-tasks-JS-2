@@ -4,4 +4,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{}],"TTyb":[function(require,module,exports) {
 "use strict";var e=t(require("lodash.throttle"));function t(e){return e&&e.__esModule?e:{default:e}}const a=document.querySelector(".feedback-form"),l={};function r(){let e=JSON.parse(localStorage.getItem("feedback-form-state"));e&&Object.entries(e).forEach(e=>{let[t,r]=e;l[t]=r,a.elements[t].value=r})}r(),a.addEventListener("input",(0,e.default)(e=>{l[e.target.name]=e.target.value,localStorage.setItem("feedback-form-state",JSON.stringify(l))},500));const s=e=>{if(e.preventDefault(),""===a.elements.email.value||""===a.elements.message.value)return alert("Please fill in all the fields!");console.log(JSON.parse(localStorage.getItem("feedback-form-state"))),localStorage.removeItem("feedback-form-state"),l.message="",l.email="",a.elements.email.value="",a.elements.message.value=""};a.addEventListener("submit",s);
 },{"lodash.throttle":"FNyO"}]},{},["TTyb"], null)
-//# sourceMappingURL=/goit-js-hw-08/03-feedback.98f84769.js.map
+//# sourceMappingURL=/Different-tasks-JS-2/03-feedback.4587a9a6.js.map
