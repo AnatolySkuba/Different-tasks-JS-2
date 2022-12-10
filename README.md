@@ -1,1 +1,1 @@
-# goit-js-hw-08
+# Different-tasks-JS-2
